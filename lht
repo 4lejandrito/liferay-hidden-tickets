@@ -1,0 +1,3 @@
+#!/bin/bash
+
+git diff --name-only --diff-filter=A $1 $2 | grep "\/FF.*Configuration.java" | xargs -L1 git log --oneline --diff-filter=A -- {0} | grep -e '[A-Z]\+-[0-9]\+' -o
